@@ -1,0 +1,1 @@
+source "$(APP_DIR)/../../Kconfig"

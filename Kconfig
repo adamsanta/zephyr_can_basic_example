@@ -1,0 +1,112 @@
+mainmenu "Zephyr CAN Example"
+
+config CAN_TX1_ID
+    hex "TX1 message CAN ID"
+    range 0x0 0x1FFFFFFF
+    default 0x11
+    help
+      CAN identifier for the message sent by TX1 thread.
+    
+config CAN_TX2_ID
+    hex "TX2 message CAN ID"
+    range 0x0 0x1FFFFFFF
+    default 0x22
+    help
+      CAN identifier for the message sent by TX2 thread.
+
+config CAN_TX3_ID
+    hex "TX3 message CAN ID"
+    range 0x0 0x1FFFFFFF
+    default 0x33
+    help
+      CAN identifier for the message sent by TX3 thread.
+
+config CAN_TX1_DLC
+    int "TX1 message CAN DLC"
+    range 0 8
+    default 1
+    help
+      CAN Data Length of the message sent by TX1 thread.
+    
+config CAN_TX2_DLC
+    int "TX2 message CAN DLC"
+    range 0 8
+    default 4
+    help
+      CAN Data Length of the message sent by TX2 thread.
+
+config CAN_TX3_DLC
+    int "TX3 message CAN DLC"
+    range 0 8
+    default 8
+    help
+      CAN Data Length of the message sent by TX3 thread.
+
+config CAN_TX1_PERIOD_MS
+    int "TX1 message period (ms)"
+    default 50
+    help
+        Sending period for the message sent by TX1 thread.
+
+config CAN_TX2_PERIOD_MS
+    int "TX2 message period (ms)"
+    default 250
+    help
+        Sending period for the message sent by TX2 thread.
+
+config CAN_TX3_PERIOD_MS
+    int "TX3 message period (ms)"
+    default 500
+    help
+        Sending period for the message sent by TX3 thread.
+
+config START_MSG
+    bool "Enable start CAN message"
+    default y
+    help
+      Activate the possibility to start printing messages
+
+config START_MSG_ID
+    hex "Start printing CAN ID"
+    range 0x0 0x1FFFFFFF
+    default 0x200
+    depends on START_MSG
+    help
+      CAN ID of the message for starting printing
+
+config STOP_MSG
+    bool "Enable stop CAN message"
+    default y
+    help
+      Activate the possibility to stop printing messages
+
+config STOP_MSG_ID
+    hex "Stop printing CAN ID"
+    range 0x0 0x1FFFFFFF
+    default 0x201
+    depends on STOP_MSG
+    help
+      CAN ID of the message for stopping printing
+
+config HELLO_MSG
+    bool "Enable hello CAN message"
+    default y
+    help
+      Activate the possibility to print hello world
+
+config HELLO_MSG_ID
+    hex "Hello trigger CAN ID"
+    range 0x0 0x1FFFFFFF
+    default 0x202
+    depends on HELLO_MSG
+    help
+      CAN ID of the message for printing hello world
+
+config CAN_BITRATE
+    int "CAN bitrate"
+    range 1 1000000
+    default 500000
+    help
+      Bitrate to set for the CAN peripheral used by the program
+
+source "Kconfig.zephyr"

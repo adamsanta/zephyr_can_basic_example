@@ -1,0 +1,1 @@
+rm -rf build tests/can_rx/build twister-out*
