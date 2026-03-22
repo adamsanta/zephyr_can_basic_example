@@ -26,7 +26,7 @@ The **tests** folder features the unit tests for the application.
 
 The content of the application folder should be placed in your **zephyrproject** folder at **zephyrproject/applications/zephyr_can_basic_example**.
 
-It should also be possible to use it from anywhere if the ```ZEPHYR_BASE``` environment variable is defined correctly and a **west** environment is activated (refer to Zephyr documentation if needed).
+It should also be possible to use it from anywhere if the ```ZEPHYR_BASE``` environment variable is defined correctly and a **west** environment is activated. Refer to Zephyr documentation if needed: [Zephyr Getting Started page](https://docs.zephyrproject.org/latest/develop/getting_started/index.html).
 <br><br>
 
 ### Running the application on a board
